@@ -5,6 +5,7 @@
     <title>Happy Birthday Sandra</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script async src="./index.js"></script>
     <style>
         body {
             background-color: rgb(34, 34, 34);
@@ -55,7 +56,7 @@
             font-family: cursive;
             color: crimsons;
             text-shadow: 5px 5px 10px crimson;
-            color: #fff;
+            color: #fff ;
         }
         
         .message {
@@ -83,7 +84,7 @@
         .message p {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             line-height: 30px;
-            font-size: .7rem;
+            font-size: .8rem;
             font-weight: 200;
         }
         
@@ -156,7 +157,7 @@
             font-size: .7rem;
             margin-top: 24px;
             height: 50px;
-            font-weight: 700 !important;
+            font-weight: 500 !important;
         }
         
         .shadow {
@@ -259,8 +260,9 @@
                     <img src="/c3.jpg" alt="">
 
                 </div> -->
-                <p class="wish-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora harum quasi velit praesentium ipsam eos aliquid quod, repudiandae minus laudantium ipsum voluptas fuga veniam impedit quas non maxime corporis ex totam in, est fugit? Laudantium
-                    molestias dolorum placeat nihil repudiandae.</p>
+                <p class="wish-text">
+In anticipation of your upcoming birthday, I send you early wishes for a fantastic day! 🎉 May the days leading up to it be filled with excitement, and may your birthday be a joyous occasion, surrounded by loved ones and filled with laughter and happiness. Here's to a year ahead filled with wonderful adventures and accomplishments. Enjoy your special day when it arrives! 🎂🎈🎁
+                </p>
             </div>
         </div>
     </div>
@@ -277,6 +279,7 @@
         const banner = document.querySelector(".banner")
         const messageContainer = document.querySelector(".message")
         const counterBlocks = document.querySelectorAll(".count-block")
+        const wishMsg = document.querySelector(".wish-text")
 
 
         const wishSlide = [
@@ -289,7 +292,7 @@
             "Age Is Just A Number But You Are Timeless",
             "Stay Young At Heart And Never Stop Dreaming",
             "May Your Day Be As Great As The Cake You'll Eat",
-            "Age Gracefully And Never Lose Your Spirit",
+            "Age Gracefully And d Never Lose Your Spirit",
             "Another Year Another Opportunity To Shine"
         ]
 
@@ -297,6 +300,7 @@
         const wish = document.createElement("p")
         messageContainer.appendChild(wish)
         let wishSlideIndex = 0
+        wishSlide[wishSlideIndex]
 
 
         setInterval(() => {
@@ -328,6 +332,7 @@
                 counterBlocks.forEach(element => element.remove());
                 counterContainer.textContent = "It's Your Day"
                 counterContainer.classList.add("shadow")
+                wishMsg.textContent = "Wishing you a very happy birthday! 🎉 May this year be a chapter of new beginnings, exciting experiences, and personal growth. Your journey ahead is filled with potential, and I hope you seize every moment with enthusiasm and determination. Here's to health, happiness, and countless reasons to smile. Have an amazing day celebrating your existence! 🎂🥳🎁"
 
             }
         }, 1000)
