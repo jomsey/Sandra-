@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Happy Birthday Sandra</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-color: rgb(34, 34, 34);
+        }
+        
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .counter-container {
+            display: flex;
+            width: 400px;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+        }
+        
+        .counter-container .count-block {
+            display: flex;
+            flex-direction: column;
+            width: 100px;
+            height: 70px;
+            align-items: center;
+            justify-content: center;
+            /* background-color: crimson; */
+            color: #2aa7f0;
+            border-radius: 5px;
+            padding: 10px;
+            animation-name: x;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+            animation-fill-mode: both;
+            animation-direction: alternate;
+        }
+        
+        .counter-container .count-block .display {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        
+        .counter-container .count-block .label {
+            font-family: cursive;
+            color: crimsons;
+            text-shadow: 5px 5px 10px crimson;
+            color: #fff;
+        }
+        
+        .message {
+            margin-top: 32px;
+            font-family: cursive;
+            width: 400px;
+            text-align: center;
+            color: #fff;
+            overflow: hidden;
+            padding: 16px;
+        }
+        
+        .message small {
+            color: crimson;
+            text-align: left !important;
+            display: block;
+            margin-left: 24px;
+            font-size: 1rem;
+        }
+        
+        .message small::first-letter {
+            font-size: 2rem;
+        }
+        
+        .message p {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            line-height: 30px;
+            font-size: .7rem;
+            font-weight: 200;
+        }
+        
+        .message h1 {
+            background-color: #04659d;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 32px;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        @keyframes x {
+            0% {
+                box-shadow: 5px 5px 50px 5px #2aa7f0;
+            }
+            50% {
+                box-shadow: 5px 5px 50px 5px #1588cb93;
+            }
+            100% {
+                box-shadow: 5px 5px 50px 5px #184d6c3e;
+            }
+        }
+        
+        @media screen and (max-width:428px) {
+            .message,
+            .counter-container {
+                width: 90%;
+            }
+            .counter-container {
+                gap: 10px;
+            }
+            .count-block {
+                width: 60px;
+                height: 50px;
+            }
+            .counter-container .count-block .display {
+                font-size: 2rem;
+            }
+            .message {
+                margin-top: 32px;
+            }
+        }
+        
+        footer small {
+            color: crimson;
+            text-align: center;
+            margin: auto;
+            display: block;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        
+        @keyframes wish-anim {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+        
+        .move-wish {
+            /* animation-name: wish-anim; */
+            animation-duration: 8s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            color: #2aa7f0;
+            font-size: .7rem;
+            margin-top: 24px;
+            height: 50px;
+            font-weight: 700 !important;
+        }
+        
+        .shadow {
+            color: #fff;
+            padding: 8px;
+            letter-spacing: 5px;
+            border-bottom: 1px solid #2aa7f0;
+        }
+        
+        .circle {
+            content: "";
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            border: 1px solid #2aa7f0;
+            z-index: -1;
+            border-radius: 50%;
+            left: 10px;
+            bottom: 10px;
+        }
+        
+        .pic {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            z-index: -1;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        
+        .display {
+            position: relative;
+        }
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .pic::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(6, 6, 6, 0.539);
+            width: 100%;
+            height: 100%;
+            filter: grayscale(100px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="counter-container">
+            <div class="count-block">
+                <span class="display days">
+                    00
+                </span>
+                <span class="label">
+                    Days
+                </span>
+            </div>
+            <div class="count-block">
+                <span class="display hours">
+                    00
+                </span>
+                <span class="label">
+                    Hours
+                </span>
+            </div>
+            <div class="count-block">
+                <span class="display minutes">
+                    00
+                </span>
+                <span class="label">
+                    Minutes
+                </span>
+            </div>
+            <div class="count-block s-b">
+                <span class="display seconds">
+                    00
+                </span>
+                <span class="label s-l">
+                    Seconds
+                </span>
+            </div>
+        </div>
+
+        <div class="message">
+            <div class="display">
+                <h1 class="banner">Happy Birthday Sandra</h1>
+                <small>Hello, Sandra</small>
+                <!-- <div class="pic">
+                    <img src="/c3.jpg" alt="">
+
+                </div> -->
+                <p class="wish-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora harum quasi velit praesentium ipsam eos aliquid quod, repudiandae minus laudantium ipsum voluptas fuga veniam impedit quas non maxime corporis ex totam in, est fugit? Laudantium
+                    molestias dolorum placeat nihil repudiandae.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <small>Muwanguzi Joseph</small>
+    </footer>
+    <script>
+        const birthday = new Date(`Nov 27 ${new Date().getFullYear()}, 23:59:59`).getTime()
+        const counterContainer = document.querySelector(".counter-container")
+        const secondsBlock = document.querySelector(".seconds")
+        const daysBlock = document.querySelector(".days")
+        const minutesBlock = document.querySelector(".minutes")
+        const hoursBlock = document.querySelector(".hours")
+        const banner = document.querySelector(".banner")
+        const messageContainer = document.querySelector(".message")
+        const counterBlocks = document.querySelectorAll(".count-block")
+
+
+        const wishSlide = [
+            "Wishing You a Day Filled With Laughter And Joy",
+            "May Your Year Bring You All Te Success You Deserve",
+            "Another Year Older But You Keep Getting Better",
+            "It's Gonna Be Another Year Of Unforgettable Moments",
+            "Your Day Is Gonna Be As Beautiful As Your Smile",
+            "Wishing You Wealth , Health , Happiness In The Coming Year ",
+            "Age Is Just A Number But You Are Timeless",
+            "Stay Young At Heart And Never Stop Dreaming",
+            "May Your Day Be As Great As The Cake You'll Eat",
+            "Age Gracefully And Never Lose Your Spirit",
+            "Another Year Another Opportunity To Shine"
+        ]
+
+        banner.className = "hidden"
+        const wish = document.createElement("p")
+        messageContainer.appendChild(wish)
+        let wishSlideIndex = 0
+
+
+        setInterval(() => {
+            wishSlideIndex++
+            if (wishSlideIndex === wishSlide.length) wishSlideIndex = 0
+            if (wishSlideIndex < 0) wishSlideIndex = wishSlide - 1
+            wish.textContent = wishSlide[wishSlideIndex]
+            wish.classList.add("move-wish")
+        }, 5000)
+
+
+
+        const timer = setInterval(() => {
+            const now = new Date().getTime()
+            const distance = birthday - now
+            const days = Math.floor(distance / (1000 * 3600 * 24))
+            const hours = Math.floor((distance % (1000 * 3600 * 24)) / (3600 * 1000))
+            const minutes = Math.floor((distance % (1000 * 3600)) / (1000 * 60))
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000)
+
+            secondsBlock.innerHTML = seconds
+            hoursBlock.innerHTML = hours
+            minutesBlock.innerHTML = minutes
+            daysBlock.innerHTML = days
+
+            if (distance < 0) {
+                clearInterval(timer)
+                banner.classList.remove("hidden")
+                counterBlocks.forEach(element => element.remove());
+                counterContainer.textContent = "It's Your Day"
+                counterContainer.classList.add("shadow")
+
+            }
+        }, 1000)
+    </script>
+</body>
+
+</html>
